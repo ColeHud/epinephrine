@@ -8,21 +8,25 @@
 
 /* Begin PBXBuildFile section */
 		ED3395181DA955F8005CC648 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3395171DA955F8005CC648 /* AppDelegate.swift */; };
-		ED33951A1DA955F8005CC648 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3395191DA955F8005CC648 /* ViewController.swift */; };
+		ED33951A1DA955F8005CC648 /* BarcodeReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3395191DA955F8005CC648 /* BarcodeReader.swift */; };
 		ED33951D1DA955F8005CC648 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED33951B1DA955F8005CC648 /* Main.storyboard */; };
 		ED33951F1DA955F8005CC648 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ED33951E1DA955F8005CC648 /* Assets.xcassets */; };
 		ED3395221DA955F8005CC648 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED3395201DA955F8005CC648 /* LaunchScreen.storyboard */; };
+		EDBC2F3C1DA9ADB60090CDCD /* Allergies.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDBC2F3B1DA9ADB60090CDCD /* Allergies.swift */; };
+		EDBC2F3E1DA9AF350090CDCD /* NavigationTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDBC2F3D1DA9AF350090CDCD /* NavigationTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		ED3395141DA955F8005CC648 /* Epinephrine.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Epinephrine.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED3395171DA955F8005CC648 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		ED3395191DA955F8005CC648 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		ED3395191DA955F8005CC648 /* BarcodeReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarcodeReader.swift; sourceTree = "<group>"; };
 		ED33951C1DA955F8005CC648 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		ED33951E1DA955F8005CC648 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		ED3395211DA955F8005CC648 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		ED3395231DA955F8005CC648 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EDBC2F351DA962520090CDCD /* Epinephrine-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Epinephrine-Bridging-Header.h"; sourceTree = "<group>"; };
+		EDBC2F3B1DA9ADB60090CDCD /* Allergies.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Allergies.swift; sourceTree = "<group>"; };
+		EDBC2F3D1DA9AF350090CDCD /* NavigationTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,7 +61,9 @@
 			isa = PBXGroup;
 			children = (
 				ED3395171DA955F8005CC648 /* AppDelegate.swift */,
-				ED3395191DA955F8005CC648 /* ViewController.swift */,
+				EDBC2F3D1DA9AF350090CDCD /* NavigationTableViewController.swift */,
+				EDBC2F3B1DA9ADB60090CDCD /* Allergies.swift */,
+				ED3395191DA955F8005CC648 /* BarcodeReader.swift */,
 				ED33951B1DA955F8005CC648 /* Main.storyboard */,
 				ED33951E1DA955F8005CC648 /* Assets.xcassets */,
 				ED3395201DA955F8005CC648 /* LaunchScreen.storyboard */,
@@ -146,8 +152,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ED33951A1DA955F8005CC648 /* ViewController.swift in Sources */,
+				ED33951A1DA955F8005CC648 /* BarcodeReader.swift in Sources */,
+				EDBC2F3E1DA9AF350090CDCD /* NavigationTableViewController.swift in Sources */,
 				ED3395181DA955F8005CC648 /* AppDelegate.swift in Sources */,
+				EDBC2F3C1DA9ADB60090CDCD /* Allergies.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
