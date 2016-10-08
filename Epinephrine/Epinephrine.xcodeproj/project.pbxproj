@@ -12,6 +12,10 @@
 		ED33951D1DA955F8005CC648 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED33951B1DA955F8005CC648 /* Main.storyboard */; };
 		ED33951F1DA955F8005CC648 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ED33951E1DA955F8005CC648 /* Assets.xcassets */; };
 		ED3395221DA955F8005CC648 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED3395201DA955F8005CC648 /* LaunchScreen.storyboard */; };
+		EDBC2F2D1DA960BD0090CDCD /* TesseractOCR.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EDBC2F2C1DA960BD0090CDCD /* TesseractOCR.framework */; };
+		EDBC2F2F1DA961000090CDCD /* tessdata in Resources */ = {isa = PBXBuildFile; fileRef = EDBC2F2E1DA961000090CDCD /* tessdata */; };
+		EDBC2F321DA9615E0090CDCD /* libstdc++.6.0.9.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = EDBC2F311DA9615E0090CDCD /* libstdc++.6.0.9.tbd */; };
+		EDBC2F341DA9616B0090CDCD /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EDBC2F331DA9616B0090CDCD /* CoreImage.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +26,11 @@
 		ED33951E1DA955F8005CC648 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		ED3395211DA955F8005CC648 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		ED3395231DA955F8005CC648 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EDBC2F2C1DA960BD0090CDCD /* TesseractOCR.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TesseractOCR.framework; sourceTree = "<group>"; };
+		EDBC2F2E1DA961000090CDCD /* tessdata */ = {isa = PBXFileReference; lastKnownFileType = folder; path = tessdata; sourceTree = "<group>"; };
+		EDBC2F311DA9615E0090CDCD /* libstdc++.6.0.9.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.6.0.9.tbd"; path = "usr/lib/libstdc++.6.0.9.tbd"; sourceTree = SDKROOT; };
+		EDBC2F331DA9616B0090CDCD /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
+		EDBC2F351DA962520090CDCD /* Epinephrine-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Epinephrine-Bridging-Header.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +38,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EDBC2F341DA9616B0090CDCD /* CoreImage.framework in Frameworks */,
+				EDBC2F321DA9615E0090CDCD /* libstdc++.6.0.9.tbd in Frameworks */,
+				EDBC2F2D1DA960BD0090CDCD /* TesseractOCR.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -38,8 +50,13 @@
 		ED33950B1DA955F8005CC648 = {
 			isa = PBXGroup;
 			children = (
+				EDBC2F331DA9616B0090CDCD /* CoreImage.framework */,
+				EDBC2F311DA9615E0090CDCD /* libstdc++.6.0.9.tbd */,
+				EDBC2F2C1DA960BD0090CDCD /* TesseractOCR.framework */,
 				ED3395161DA955F8005CC648 /* Epinephrine */,
 				ED3395151DA955F8005CC648 /* Products */,
+				EDBC2F301DA961030090CDCD /* Supporting Files */,
+				EDBC2F351DA962520090CDCD /* Epinephrine-Bridging-Header.h */,
 			);
 			sourceTree = "<group>";
 		};
@@ -62,6 +79,14 @@
 				ED3395231DA955F8005CC648 /* Info.plist */,
 			);
 			path = Epinephrine;
+			sourceTree = "<group>";
+		};
+		EDBC2F301DA961030090CDCD /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				EDBC2F2E1DA961000090CDCD /* tessdata */,
+			);
+			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -123,6 +148,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				ED3395221DA955F8005CC648 /* LaunchScreen.storyboard in Resources */,
+				EDBC2F2F1DA961000090CDCD /* tessdata in Resources */,
 				ED33951F1DA955F8005CC648 /* Assets.xcassets in Resources */,
 				ED33951D1DA955F8005CC648 /* Main.storyboard in Resources */,
 			);
@@ -249,10 +275,19 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_CXX_LIBRARY = "compiler-default";
+				CLANG_ENABLE_MODULES = YES;
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = Epinephrine/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.MHacks.Epinephrine;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Epinephrine-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -260,10 +295,18 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_CXX_LIBRARY = "compiler-default";
+				CLANG_ENABLE_MODULES = YES;
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = Epinephrine/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.MHacks.Epinephrine;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Epinephrine-Bridging-Header.h";
 			};
 			name = Release;
 		};
@@ -286,6 +329,7 @@
 				ED3395281DA955F8005CC648 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
