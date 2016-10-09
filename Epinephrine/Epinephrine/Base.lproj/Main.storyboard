@@ -1,8 +1,9 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="P7b-jN-IVB">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="P7b-jN-IVB">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Barcode Reader-->
@@ -35,29 +36,87 @@
                     <view key="view" contentMode="scaleToFill" id="sJQ-Uf-sDO">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add an Allergy" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SOE-PA-lRv">
+                                <rect key="frame" x="244" y="72" width="111" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.098039215686274508" green="0.043137254901960784" blue="0.15686274509803921" alpha="0.96021855828220859" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Vhk-JZ-uIT">
+                                <rect key="frame" x="20" y="101" width="560" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pZv-Nb-Y9L">
+                                <rect key="frame" x="260.5" y="139" width="79" height="30"/>
+                                <state key="normal" title="Add Allergy">
+                                    <color key="titleColor" red="0.011764705882352941" green="0.80784313725490198" blue="0.64313725490196072" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                            </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="t4r-df-HdX">
+                                <rect key="frame" x="0.0" y="177" width="600" height="423"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="allergyPrototypeCell" id="SkK-Xb-iMR">
+                                        <rect key="frame" x="0.0" y="28" width="600" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="SkK-Xb-iMR" id="meW-9G-m8f">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="t4r-df-HdX" firstAttribute="leading" secondItem="sJQ-Uf-sDO" secondAttribute="leadingMargin" constant="-20" id="64q-sN-Vld"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="t4r-df-HdX" secondAttribute="trailing" constant="-20" id="HQx-ic-lQe"/>
+                            <constraint firstItem="SOE-PA-lRv" firstAttribute="top" secondItem="3rG-zl-PpU" secondAttribute="bottom" constant="8" id="KKi-tF-yCl"/>
+                            <constraint firstItem="t4r-df-HdX" firstAttribute="top" secondItem="pZv-Nb-Y9L" secondAttribute="bottom" constant="8" id="L2d-hv-Wow"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="Vhk-JZ-uIT" secondAttribute="leading" id="Lfg-L7-dMb"/>
+                            <constraint firstItem="tuS-IT-QLc" firstAttribute="top" secondItem="t4r-df-HdX" secondAttribute="bottom" id="MZH-Vh-yzX"/>
+                            <constraint firstItem="pZv-Nb-Y9L" firstAttribute="top" secondItem="Vhk-JZ-uIT" secondAttribute="bottom" constant="8" id="PK3-ml-AiO"/>
+                            <constraint firstItem="Vhk-JZ-uIT" firstAttribute="top" secondItem="SOE-PA-lRv" secondAttribute="bottom" constant="8" id="Rmt-5F-dgf"/>
+                            <constraint firstItem="SOE-PA-lRv" firstAttribute="centerX" secondItem="sJQ-Uf-sDO" secondAttribute="centerX" id="Vs8-Qt-KFi"/>
+                            <constraint firstItem="Vhk-JZ-uIT" firstAttribute="centerX" secondItem="sJQ-Uf-sDO" secondAttribute="centerX" id="bQb-9R-wpd"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Vhk-JZ-uIT" secondAttribute="trailing" id="ffR-BX-JBW"/>
+                            <constraint firstItem="pZv-Nb-Y9L" firstAttribute="centerX" secondItem="sJQ-Uf-sDO" secondAttribute="centerX" id="lMX-kF-bae"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Omf-mM-6lm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="730" y="-875"/>
         </scene>
-        <!--Previous Scans-->
+        <!--Scans Table View Controller-->
         <scene sceneID="tvg-RD-Yff">
             <objects>
-                <tableViewController id="vS8-Ux-TxY" sceneMemberID="viewController">
+                <tableViewController id="vS8-Ux-TxY" customClass="ScansTableViewController" customModule="Epinephrine" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="pBA-iN-jmm">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="uFT-Hr-6eH">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="scanIdentifier" id="uFT-Hr-6eH" customClass="ScanTableViewCell" customModule="Epinephrine" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="92" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="uFT-Hr-6eH" id="yxA-ws-0MB">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tGf-GL-MbV">
+                                            <rect key="frame" x="8" y="11" width="42" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" red="0.098039215686274508" green="0.043137254901960784" blue="0.15686274509803921" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="idNumberLabel" destination="tGf-GL-MbV" id="IbR-a9-dSR"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -65,13 +124,15 @@
                             <outlet property="delegate" destination="vS8-Ux-TxY" id="ZNW-Hf-dxz"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Previous Scans" id="Mqj-jc-OF6">
+                    <navigationItem key="navigationItem" id="Mqj-jc-OF6">
                         <barButtonItem key="leftBarButtonItem" title="Allergies" id="O9D-ei-Tr2">
+                            <color key="tintColor" red="0.011764705882352941" green="0.80784313725490198" blue="0.64313725490196072" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
-                                <segue destination="ohC-bl-b8Y" kind="show" action="showDetailViewController:sender:" id="eKO-QE-6rR"/>
+                                <segue destination="ohC-bl-b8Y" kind="show" id="d5F-yw-UTR"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Scan" id="C2N-gp-8Fc">
+                            <color key="tintColor" red="0.011764705882352941" green="0.80784313725490198" blue="0.64313725490196072" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <segue destination="Xvc-DM-RHB" kind="show" id="6N7-FZ-JqV"/>
                             </connections>
@@ -89,6 +150,11 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="IR7-ow-Uvi">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.098039215686274508" green="0.043137254901960784" blue="0.15686274509803921" alpha="1" colorSpace="calibratedRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" red="0.011764705882352941" green="0.80784313725490198" blue="0.64313725490196072" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="textShadowColor" red="0.011764705882352941" green="0.80784313725490198" blue="0.64313725490196072" alpha="1" colorSpace="calibratedRGB"/>
+                        </textAttributes>
                     </navigationBar>
                     <connections>
                         <segue destination="vS8-Ux-TxY" kind="relationship" relationship="rootViewController" id="iyR-6T-sPR"/>

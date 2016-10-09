@@ -12,8 +12,12 @@
 		ED33951D1DA955F8005CC648 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED33951B1DA955F8005CC648 /* Main.storyboard */; };
 		ED33951F1DA955F8005CC648 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ED33951E1DA955F8005CC648 /* Assets.xcassets */; };
 		ED3395221DA955F8005CC648 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED3395201DA955F8005CC648 /* LaunchScreen.storyboard */; };
+		ED5122901DA9FA4F00702C25 /* AppNavControllerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED51228F1DA9FA4F00702C25 /* AppNavControllerViewController.swift */; };
 		EDBC2F3C1DA9ADB60090CDCD /* Allergies.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDBC2F3B1DA9ADB60090CDCD /* Allergies.swift */; };
-		EDBC2F3E1DA9AF350090CDCD /* NavigationTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDBC2F3D1DA9AF350090CDCD /* NavigationTableViewController.swift */; };
+		EDBC2F3E1DA9AF350090CDCD /* ScansTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDBC2F3D1DA9AF350090CDCD /* ScansTableViewController.swift */; };
+		EDBC2F401DA9C1980090CDCD /* Allergy.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDBC2F3F1DA9C1980090CDCD /* Allergy.swift */; };
+		EDBC2F421DA9C1BE0090CDCD /* Scan.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDBC2F411DA9C1BE0090CDCD /* Scan.swift */; };
+		EDBC2F441DA9C8A20090CDCD /* ScanTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDBC2F431DA9C8A20090CDCD /* ScanTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,9 +28,13 @@
 		ED33951E1DA955F8005CC648 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		ED3395211DA955F8005CC648 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		ED3395231DA955F8005CC648 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ED51228F1DA9FA4F00702C25 /* AppNavControllerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppNavControllerViewController.swift; sourceTree = "<group>"; };
 		EDBC2F351DA962520090CDCD /* Epinephrine-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Epinephrine-Bridging-Header.h"; sourceTree = "<group>"; };
 		EDBC2F3B1DA9ADB60090CDCD /* Allergies.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Allergies.swift; sourceTree = "<group>"; };
-		EDBC2F3D1DA9AF350090CDCD /* NavigationTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationTableViewController.swift; sourceTree = "<group>"; };
+		EDBC2F3D1DA9AF350090CDCD /* ScansTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScansTableViewController.swift; sourceTree = "<group>"; };
+		EDBC2F3F1DA9C1980090CDCD /* Allergy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Allergy.swift; sourceTree = "<group>"; };
+		EDBC2F411DA9C1BE0090CDCD /* Scan.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Scan.swift; sourceTree = "<group>"; };
+		EDBC2F431DA9C8A20090CDCD /* ScanTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScanTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,12 +68,16 @@
 		ED3395161DA955F8005CC648 /* Epinephrine */ = {
 			isa = PBXGroup;
 			children = (
+				ED51228F1DA9FA4F00702C25 /* AppNavControllerViewController.swift */,
 				ED3395171DA955F8005CC648 /* AppDelegate.swift */,
-				EDBC2F3D1DA9AF350090CDCD /* NavigationTableViewController.swift */,
 				EDBC2F3B1DA9ADB60090CDCD /* Allergies.swift */,
 				ED3395191DA955F8005CC648 /* BarcodeReader.swift */,
 				ED33951B1DA955F8005CC648 /* Main.storyboard */,
+				EDBC2F3F1DA9C1980090CDCD /* Allergy.swift */,
+				EDBC2F411DA9C1BE0090CDCD /* Scan.swift */,
 				ED33951E1DA955F8005CC648 /* Assets.xcassets */,
+				EDBC2F3D1DA9AF350090CDCD /* ScansTableViewController.swift */,
+				EDBC2F431DA9C8A20090CDCD /* ScanTableViewCell.swift */,
 				ED3395201DA955F8005CC648 /* LaunchScreen.storyboard */,
 				ED3395231DA955F8005CC648 /* Info.plist */,
 				EDBC2F301DA961030090CDCD /* Supporting Files */,
@@ -152,9 +164,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ED5122901DA9FA4F00702C25 /* AppNavControllerViewController.swift in Sources */,
 				ED33951A1DA955F8005CC648 /* BarcodeReader.swift in Sources */,
-				EDBC2F3E1DA9AF350090CDCD /* NavigationTableViewController.swift in Sources */,
+				EDBC2F401DA9C1980090CDCD /* Allergy.swift in Sources */,
+				EDBC2F421DA9C1BE0090CDCD /* Scan.swift in Sources */,
+				EDBC2F3E1DA9AF350090CDCD /* ScansTableViewController.swift in Sources */,
 				ED3395181DA955F8005CC648 /* AppDelegate.swift in Sources */,
+				EDBC2F441DA9C8A20090CDCD /* ScanTableViewCell.swift in Sources */,
 				EDBC2F3C1DA9ADB60090CDCD /* Allergies.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

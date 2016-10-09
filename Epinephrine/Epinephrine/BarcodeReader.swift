@@ -11,11 +11,15 @@ import AVFoundation
 
 class BarcodeReader: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
     
+    var scan: Scan?
+    
     var session: AVCaptureSession!
     var previewLayer: AVCaptureVideoPreviewLayer!
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.navigationController!.navigationBar.tintColor = UIColor.whiteColor();
         
         // Create a session object.
         session = AVCaptureSession()
@@ -95,7 +99,7 @@ class BarcodeReader: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
                 trimmedCodeNoZero = String(trimmedCodeString.characters.dropFirst())
                 
                 // Send the doctored UPC to DataService.searchAPI()
-                //trimmedCodeNoZero
+                self.scan = Scan(idNumber: trimmedCodeNoZero)
             } else {
                 
                 // Send the doctored EAN to DataService.searchAPI()

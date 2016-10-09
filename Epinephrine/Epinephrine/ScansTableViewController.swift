@@ -8,7 +8,10 @@
 
 import UIKit
 
-class NavigationTableViewController: UITableViewController {
+class ScansTableViewController: UITableViewController {
+    
+    var scans = [Scan]()
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,18 +37,20 @@ class NavigationTableViewController: UITableViewController {
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return scans.count
     }
 
-    /*
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath)
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> ScanTableViewCell {
+        let cellIdentifier = "scanIdentifier"
+        let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! ScanTableViewCell
 
         // Configure the cell...
+        let scan = scans[indexPath.row]
+        cell.idNumberLabel.text = scan.idNumber
 
         return cell
     }
-    */
+ 
 
     /*
     // Override to support conditional editing of the table view.
@@ -82,14 +87,59 @@ class NavigationTableViewController: UITableViewController {
     }
     */
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        
+        if segue.identifier == "Show" {
+            let scanDetailViewController = segue.destinationViewController as! BarcodeReader
+            
+            // Get the cell that generated this segue.
+            if let selectedScanCell = sender as? ScanTableViewCell {
+                let indexPath = tableView.indexPathForCell(selectedScanCell)!
+                let selectedScan = scans[indexPath.row]
+                scanDetailViewController.scan = selectedScan
+            }
+        }
+        else if segue.identifier == "AddItem" {
+            print("Adding new scan.")
+        }
     }
-    */
+    
+    @IBAction func unwindToScanList(sender: UIStoryboardSegue) {
+        if let sourceViewController = sender.sourceViewController as? BarcodeReader, scan = sourceViewController.scan {//where the magic happens
+            if let selectedIndexPath = tableView.indexPathForSelectedRow {
+                // Update an existing meal.
+                scans[selectedIndexPath.row] = scan
+                tableView.reloadRowsAtIndexPaths([selectedIndexPath], withRowAnimation: .None)
+            } else {
+                // Add a new scan.
+                let newIndexPath = NSIndexPath(forRow: scans.count, inSection: 0)
+                scans.append(scan)
+                tableView.insertRowsAtIndexPaths([newIndexPath], withRowAnimation: .Bottom)
+            }
+            // Save the meals.
+            saveScans()
+        }
+    }
+    
+    // MARK: NSCoding
+    
+    func saveScans() {
+        let isSuccessfulSave = NSKeyedArchiver.archiveRootObject(scans, toFile: Scan.ArchiveURL.path!)
+        if !isSuccessfulSave {
+            print("Failed to save scans...")
+        }
+    }
+    
+    func loadScans() -> [Scan]? {
+        return NSKeyedUnarchiver.unarchiveObjectWithFile(Scan.ArchiveURL.path!) as? [Scan]
+    }
+
+ 
 
 }
